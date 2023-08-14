@@ -1,4 +1,5 @@
 FROM eclipse-temurin
 EXPOSE 8080
-ADD target/hi-0.0.1-SNAPSHOT.jar hi-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/hi-0.0.1-SNAPSHOT.jar"]
+WORKDIR /app
+COPY /Maven/target/sample-java-app-0.0.2.jar /app/
+ENTRYPOINT ["java","-jar","/sample-java-app-0.0.2.jar"]
