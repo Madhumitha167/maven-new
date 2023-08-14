@@ -40,6 +40,6 @@ jobs:
         password: 123456789@madhu
     - name: Build and Push Docker Image
       run: |
-        docker build -t madhu1607/new:latest .
+        docker build -t madhu1607/new:latest ./Maven
         docker push madhu1607/new:latest
     
