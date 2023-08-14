@@ -34,6 +34,8 @@ jobs:
       run: echo "JAR_FILE_PATH=$(ls -d Maven/target/*.jar)" >> $GITHUB_ENV
     - name: Display JAR file location
       run: echo "JAR file is located at:$JAR_FILE_PATH"
+    - name: Show Contents of Maven/target Directory
+      run: ls -R Maven/target
     - name: Debug Docker Context
       run: |
         pwd
