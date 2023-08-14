@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newjava
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: newjava
+  template:
+    metadata:
+      labels:
+        app: newjava
+    spec:
+      containers:
+        - name: java-container
+          image: madhu1607/new:latest
+          ports:
+            - containerPort: 80
