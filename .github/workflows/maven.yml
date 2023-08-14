@@ -29,6 +29,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file Maven/pom.xml
+      working-directory: ${{ github.workspace }}
+    - name: List JAR file
+      run: ls -R Maven/target/
     - name: Debug Docker Context
       run: |
         pwd
