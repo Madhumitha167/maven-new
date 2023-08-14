@@ -30,8 +30,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file Maven/pom.xml
       working-directory: ${{ github.workspace }}
-    - name: List JAR file
-      run: ls -R Maven/target/
+    - name: Set JAR file location as an environment variable
+      run: echo "JAR_FILE_PATH=$(ls -d Maven/target/*.jar)" >> $GITHUB_ENV
+    - name: Display JAR file location
+      run: echo "JAR file is located at:$JAR_FILE_PATH"
     - name: Debug Docker Context
       run: |
         pwd
